@@ -1,0 +1,6 @@
+#This repository is for c++ codes
+#
+*.o
+*.exe
+*.txt
+*.doc
