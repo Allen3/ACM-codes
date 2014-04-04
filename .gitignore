@@ -1,0 +1,7 @@
+#this repository contains c++ codes
+#
+*.*
+!*.cpp
+!.gitignore
+!README
+!READEME.md
