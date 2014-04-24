@@ -27,9 +27,9 @@ Glancing at it, you may think this problem should be solved by Planar Segment Tr
 We should adapt some tricks solving this problem. Because all the query are like this form `(0 , 0 , x , y)`. So we should `sort` the coordinates at first , `y` as the first key word and `x` as the second. After this , we can use `BIT[num]` to check how many numbers _currently_ are smaller than or equal to `num`. Obviously, here `num` should be the `x` coordinate.
 
 > We should add all the coordinates by __1__ in order to maintain the `BIT[]` easily.
-  i.e.
-	`arr[i].x ++;`
-	`arr[i].y ++;`
+> i.e.
+>	`arr[i].x ++;`
+>	`arr[i].y ++;`
 
 __Problem H__
 --------------
@@ -71,5 +71,6 @@ If you have some questions or find something wrong in my solutions, just contact
 * Telephone: (+86) 135 4139 1821
 * E-mail: Allen.3.ysj@gmail.com
 
-> The source code will be staged on my github:
-URL: `https://github.com/Allen3/CDOJ`
+The source code will be staged on my github:
+
+URL: https://github.com/Allen3/CDOJ
