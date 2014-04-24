@@ -39,15 +39,15 @@ Here we can maintain 2 heaps to solve this problem. We create a `MaxHeap` and a 
 
 We should disscuss the following situations:
 
-+ num < maxHeapTop
-- maxHeap.size() <= minHeap.size()  
-- maxHeap.size() == minHeap.size() + 1
-+ maxHeapTop <= num <= minHeapTop
-- maxHeap.size() <= minHeap.size()
-- maxHeap.size() == minHeap.size() + 1
-+ num > minHeapTop
-- minHeap.size() <= maxHeap.size()
-- minHeap.size() == maxHeap.size() + 1
+	num < maxHeapTop
+		maxHeap.size() <= minHeap.size()  
+		maxHeap.size() == minHeap.size() + 1
+	maxHeapTop <= num <= minHeapTop
+		maxHeap.size() <= minHeap.size()
+		maxHeap.size() == minHeap.size() + 1
+	num > minHeapTop
+		minHeap.size() <= maxHeap.size()
+		minHeap.size() == maxHeap.size() + 1
 
 __Problem J__
 --------------
