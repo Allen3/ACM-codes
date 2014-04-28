@@ -14,10 +14,6 @@ Node nodes[1000010];
 bool vis[1000010];
 Info arr[100010];
 
-bool cmp(Info a , Info b){
-    return (a.year > b.year);
-}   //cmp
-
 int main(){
     scanf("%d" , &Z);
     while (Z --){
