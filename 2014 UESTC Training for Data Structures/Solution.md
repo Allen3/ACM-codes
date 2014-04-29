@@ -9,9 +9,16 @@ Just the ordinary operations of the data structure , no more further skills.
 
 __Problem C__
 --------------
-* Segment Tree(lazy-tag)
+* Segment Tree
 
-Segment Tree , which should maintain functions that can modify and query intervals. So , `lazy-tag` should be used to optimise the data structure.
+Segment Tree , which should maintain functions that can modify and query intervals. So , `lazy-tag` should be used to optimize the data structure.
+
+__Problem D__
+--------------
+* Segment Tree + Discretization + Point Division
+
+At first , in order to transfer this problem solving by Segment Tree, we are suggested to turn the frame into a scanning line. To achieve this, we are need to divide a single point into four points , whose `x` coordinate should be `x` and `x + W` , `y` coordinate should be `y` and `y + H`. By doing this, we successfully transfer this problem into `Scanning line problem`. However, pay attention to the data range , a bold Segment Tree is not acceptable as result of the memory limits. All we should do at first is to discretize the data.
+
 
 __Problem E__
 --------------
@@ -30,6 +37,20 @@ We should adapt some tricks solving this problem. Because all the query are like
 > i.e.
 >	`arr[i].x ++;`
 >	`arr[i].y ++;`
+
+
+__Problem G__
+--------------
+* Segment Tree
+
+This problem help us understand Segment Tree profoundly. Because we need to maintain four fields.
+
+- seg_sum(the interval sum)
+- seg_max(the max consecutive interval sum)
+- seg_max_left(the max consecutive interval sum starts from left side)
+- seg_max_right(the max consecutive interval sum starts from right side)
+
+So, How to maintain these fields, it is your task.
 
 __Problem H__
 --------------
