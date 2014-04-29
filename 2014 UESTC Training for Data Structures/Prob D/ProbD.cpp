@@ -4,9 +4,9 @@
 #include<algorithm>
 using namespace std;
 
-#define     N       100010
+#define     N           100010
 #define     MAX_NUM     0x3f3f3f3f
-#define     LEN     200010
+#define     LEN         200010
 
 struct _Node{
     int x , y_up , y_down , w;
@@ -29,7 +29,7 @@ class SegTree{
         void build(int , int );
         void update(int , int , int , int );
         int  query(int , int , int );
-}   //SegTree
+};   //SegTree
 
 SegTree::SegTree(){
     tail = 0;
@@ -45,8 +45,8 @@ SegTree::SegTree(){
 void SegTree::clean(int x){
     if (tag[x]){
         seg[x] += tag[x];
-        tag[l_son[x]] += tag[x];
-        tag[r_son[x]] += tag[x];
+        if (l_son[x])   tag[l_son[x]] += tag[x];
+        if (r_son[x])   tag[r_son[x]] += tag[x];
         tag[x] = 0;
     }   //tag[x]
 }   //clean
@@ -54,14 +54,15 @@ void SegTree::clean(int x){
 void SegTree::build(int l , int r){
     tail ++;
     int x = tail;
+    left[x] = l;    right[x] = r;
     if (l == r){
-        seg[x] = arr[l];
+        seg[x] = this->arr[l];
         return;
     }   //  leafnode
     
     int mid = (l + r) >> 1;
     l_son[x] = tail + 1;    build(l , mid);
-    r_son[x] = tail + 1;    build(mid + 1, r);
+    r_son[x] = tail + 1;    build(mid + 1 , r);
 
     clean(l_son[x]);    clean(r_son[x]);
     seg[x] = max(seg[l_son[x]] , seg[r_son[x]]);
