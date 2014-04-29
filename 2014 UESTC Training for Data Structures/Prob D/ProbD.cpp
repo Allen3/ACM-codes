@@ -172,7 +172,13 @@ int main(){
 
     int ans = 0;
     obj.build(1 , ord);
+    num = arr[0].x;
     for (int i = 0;i < cnt_a;i ++){
+        if (num != arr[i].x){
+            ans = max(ans , obj.query(1 , 1 , ord));
+            num = arr[i].x;
+        }   //  x differs
+
         if (arr[i].y_up < arr[i].y_down)
             y_swap(&arr[i].y_up , &arr[i].y_down);
         int l = arr[i].y_down;
@@ -184,9 +190,9 @@ int main(){
         else{
             obj.update(1 , l , r , -arr[i].w);
         }   //  Out
-        
-        ans = max(ans , obj.query(1 , 1 , ord));
     }   //for i _ cnt_a
+    ans = max(ans , obj.query(1 , 1 , ord));    //the last x
+
     printf("%d\n" , ans);
 
     return 0;
