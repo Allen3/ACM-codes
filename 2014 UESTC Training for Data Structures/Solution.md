@@ -1,9 +1,18 @@
 2014 UESTC Training for Data Structures
 =======================================
+__Problem A__
+--------------
+* Union-Find Set + Discretization
+
+The problem asks us to check the number of the connected component for each inquiry, thus Union-Find Set is to be used here. We should do some preprocess at first.
+
+As the Union-Find Set cannot support the delete operation so well, we should reverse the order to round it. 
+
+As the range of the numbers is very huge , we should discretize the data.
 
 __Problem B__
 --------------
-* Segment tree, Binary Indexed Tree
+* Segment Tree(Binary Indexed Tree)
 
 Just the ordinary operations of the data structure , no more further skills.
 
@@ -82,7 +91,7 @@ __Problem K__
 --------------
 * Stack
 
-Just note that each number vary from another. So just implement a stack simply. That's OK.
+Just note that each number vary from another. So just implement a stack simply. That is OK.
 
 
 
