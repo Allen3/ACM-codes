@@ -59,7 +59,7 @@ void SegTree::build(int l , int r){
         seg[x] = this->arr[l];
         return;
     }   //  leafnode
-    
+
     int mid = (l + r) >> 1;
     l_son[x] = tail + 1;    build(l , mid);
     r_son[x] = tail + 1;    build(mid + 1 , r);
@@ -73,7 +73,7 @@ void SegTree::update(int x , int l , int r , int val){
     if (l <= left[x] && right[x] <= r){
         tag[x] += val;
         return;
-    }   
+    }
 
     int mid = (left[x] + right[x]) >> 1;
     if (l <= mid)    update(l_son[x] , l , r , val);
@@ -127,7 +127,7 @@ int main(){
         scanf("%d%d%d" , &xx , &yy , &ww);
         arr[cnt_a].x      = xx;
         arr[cnt_a].y_up   = yy + H;
-        arr[cnt_a].y_down = yy - H;
+        arr[cnt_a].y_down = yy;
         arr[cnt_a].w      = ww;
         arr[cnt_a].isIn   = true;
         arr[cnt_a].once   = false;
@@ -135,7 +135,7 @@ int main(){
 
         arr[cnt_a].x      = xx + W;
         arr[cnt_a].y_up   = yy + H;
-        arr[cnt_a].y_down = yy - H;
+        arr[cnt_a].y_down = yy;
         arr[cnt_a].w      = ww;
         arr[cnt_a].isIn   = false;
         arr[cnt_a].once   = false;
@@ -158,6 +158,7 @@ int main(){
     sort(brr , brr + cnt_b , cmp_val);
 
     int num = MAX_NUM;
+    ord = 0;
     for (int i = 0;i < cnt_b;i ++){
         if (brr[i].val != num)
             ord ++;
@@ -167,7 +168,7 @@ int main(){
             arr[brr[i].pos].once = true;
         }
         else
-            arr[brr[i].pos].y_down = ord; 
+            arr[brr[i].pos].y_down = ord;
     }   //for i _ cnt_b
 
     int ans = 0;
@@ -185,10 +186,10 @@ int main(){
         int r = arr[i].y_up;
 
         if (arr[i].isIn){
-            obj.update(1 , l , r , arr[i].w);
+            obj.update(1 , l , r - 1 , arr[i].w);
         }   //  In
         else{
-            obj.update(1 , l , r , -arr[i].w);
+            obj.update(1 , l , r - 1 , -arr[i].w);
         }   //  Out
     }   //for i _ cnt_a
     ans = max(ans , obj.query(1 , 1 , ord));    //the last x
