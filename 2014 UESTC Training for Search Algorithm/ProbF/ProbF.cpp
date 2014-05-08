@@ -1,6 +1,7 @@
 #include<cstdio>
 #include<cstdlib>
 #include<cstring>
+#include<iostream>
 using namespace std;
 
 struct Node{
@@ -52,16 +53,17 @@ void solve(){
 }   //solve
 
 int main(){
-    char ch;
+    char str[40];
 
-    while (scanf("%d%d%d%c" , &L , &R , &C , &ch) && (L | R | C)){
+    while (scanf("%d%d%d" , &L , &R , &C) && (L | R | C)){
         memset(Map , 0 , sizeof(Map));
         memset(vis , 0 , sizeof(vis));
 
         for (int i = 0;i < L;i ++){
             for (int j = 0;j < R;j ++){
+                scanf("%s" , str);
                 for (int k = 0;k < C;k ++){
-                    scanf("%c" , &Map[i][j][k]);
+                    Map[i][j][k] = str[k];
                     if (Map[i][j][k] == 'S'){
                         S_x = i;    S_y = j;    S_z = k;
                     }   //  S
@@ -69,9 +71,7 @@ int main(){
                         E_x = i;    E_y = j;    E_z = k;
                     }   //  E
                 }   //for k _ C
-                scanf("%c" , &ch);
             }   //for j _ R
-            scanf("%c" , &ch);
         }   //for i _ L
 
         solve();
