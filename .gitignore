@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #This repository is for c++ codes
 *.o
 *.exe
@@ -6,3 +7,10 @@
 *.rar
 *.cpp.save
 *.doc
+*.*
+!*.cpp
+!.gitignore
+!README
+!READEME.md
+!*.md
+>>>>>>> f21956afb6a8ce7c00fb9d49167a4322a6332a21
