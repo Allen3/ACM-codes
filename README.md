@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 My ACM codes
 ============
 
@@ -27,6 +26,3 @@ Information
 * Account:	Allen\_3
 
 Author's E-mail:	Allen.3.ysj@gmail.com
-
-* Allen_3
->>>>>>> f21956afb6a8ce7c00fb9d49167a4322a6332a21
